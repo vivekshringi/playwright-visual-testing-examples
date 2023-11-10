@@ -1,0 +1,1 @@
+# Playwright Visual testing capabilities 
