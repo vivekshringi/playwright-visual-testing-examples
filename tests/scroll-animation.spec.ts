@@ -1,5 +1,5 @@
 import { test, Page, Browser, chromium } from '@playwright/test';
-import { scroll, gotoNagarro } from '../util/util';
+import { scroll, gotoNagarro, renameFile } from '../util/util';
 
 let page: Page;
 let browser: Browser;
@@ -13,6 +13,7 @@ test('scroll from start to bottom', async () => {
   await gotoNagarro(page);
   await page.evaluate(scroll,{direction:"down", speed:"slow"}); 
   await context.close();
+  await renameFile(page, 'scroll.mp4')
 });
 
 test('auto slider', async () => {
@@ -24,4 +25,5 @@ test('auto slider', async () => {
   await gotoNagarro(page);
   await page.waitForTimeout(25000);
   await context.close();
+  await renameFile(page, 'auto.mp4')
 });

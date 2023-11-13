@@ -20,7 +20,7 @@ let drag = async (page:Page, source:string, destination:string) => {
   await page.mouse.up();
 };
 
-test.only('test 1 - fullscreen', async ({ page}) => {
+test('drag and drop' , async ({ page}) => {
    await page.locator('#StorySliderID').scrollIntoViewIfNeeded();
    expect (page.locator('#StorySliderID')).toBeVisible();
    for(let i=0;i<4;i++){

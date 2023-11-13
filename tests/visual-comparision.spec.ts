@@ -47,7 +47,7 @@ test('test 6 - maxDiff', async ({ page }) => {
 test('test 7 - omit background', async ({ page }) => {
   await page.setViewportSize({ width: 1000, height: 1000 });
   await page.goto('/grid', { waitUntil: 'networkidle' });
-  await expect(page.locator('#grid')).toHaveScreenshot('grid.png',{omitBackground:true});
+  await expect(page.locator('#grid')).toHaveScreenshot('grid.png',{omitBackground:false});
 });
 
 test('test 8 - animation off', async ({ page }) => {
