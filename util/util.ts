@@ -1,5 +1,22 @@
 import { Page } from "@playwright/test";
+import * as fs from 'fs';
+
+
 let target = 'https://www.nagarro.com/en'
+
+export let renameFile = async (page:Page, newName:string) =>{
+  const path = await page.video()?.path();
+  const oldName = path?.substring(path.lastIndexOf('/')+1);
+  const newPath = path?.substring(0,path.lastIndexOf('/')+1);
+  if(path != undefined){
+    if (fs.existsSync(path)) {
+      fs.rename(path, newPath + newName, function (err) {
+        if (err) throw err;
+        console.log('File Renamed!');
+      });
+  }
+}
+}
 
 export let gotoNagarro = async (page:Page) =>{
     await page.goto(target,{waitUntil:'networkidle'});
