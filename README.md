@@ -28,7 +28,7 @@ Different screens and contexts can be displayed on website using slider. User ei
 
 Refer example in drag-and-drop.spec.de. it slides every screen and takes the screenshot to perform the visual comparision of everyslide 
 
-### Scrool animations 
+### Scroll animations 
 In this modern time, Web development is advances and uses complex animation to give outstanding effects. to test animation, playwright support to record videos. It is very easy to play video rather than perform complex action again and again. 
 
 Refer scroll-animation.spec records two videos. one is the scroll animation of a websites from top to bottom and other is a automation slider. Bugs and defects can be easily identified by playing the videos 
